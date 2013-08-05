@@ -17,7 +17,7 @@ class Server extends Actor with ActorLogging {
 
   /* 起動時にListen開始 */
   override def preStart {
-    IO(Tcp) ! Bind(self, new InetSocketAddress("0.0.0.0", 8080))
+    IO(Tcp) ! Bind(self, new InetSocketAddress("localhost", 8080))
   }
 
   def receive = {
